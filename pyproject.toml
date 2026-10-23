@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-cicd-validation-gates"
+version = "0.1.0"
+description = "ML CI/CD with validation gates: data validation, model validation, regression detection, reproducibility manifests, and fail-closed promotion — the pipeline between notebook experiment and production model."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "ML CI/CD Contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.29", "pydantic>=2.6"]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+mlgates = "mlgates.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

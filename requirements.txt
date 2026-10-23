@@ -1,0 +1,4 @@
+# Core library has zero runtime dependencies (pure standard library).
+# Optional extras:
+#   pip install ".[api]" -> FastAPI + uvicorn + pydantic
+#   pip install ".[dev]" -> pytest (+ httpx for API tests)
